@@ -1,0 +1,12 @@
+## specify the base image
+FROM node:14.4.0-alpine
+
+## specify working directory
+WORKDIR "/app"
+COPY ./package.json .
+RUN npm install 
+COPY .  .
+
+
+## command to run 
+CMD [ "npm", "run","dev" ]

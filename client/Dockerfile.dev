@@ -1,0 +1,13 @@
+# specify the base image
+FROM node:14.4.0-alpine
+
+# setup working directory
+WORKDIR '/app'
+## Getting package ready
+COPY ./package.json .
+RUN npm install 
+## copy other files
+COPY . .
+
+# running app
+CMD [ "npm", "run","start" ]
